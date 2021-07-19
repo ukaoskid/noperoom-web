@@ -1,0 +1,38 @@
+<h2>Settings</h2>
+<div class="container">
+  <form novalidate [formGroup]="form" (ngSubmit)="submit()">
+    <div class="row">
+      <app-text-input
+        label="Server"
+        formControlName="server"
+        placeholder="Server"
+        [showValidation]="false">
+      </app-text-input>
+    </div>
+    <div class="row">
+      <app-text-input
+        label="Nickname"
+        formControlName="nickname"
+        placeholder="Nickname"
+        [showValidation]="false">
+      </app-text-input>
+    </div>
+    <div class="row">
+      <app-text-input
+        label="Channel"
+        formControlName="channel"
+        placeholder="Channel"
+        [showValidation]="false">
+      </app-text-input>
+    </div>
+    <div class="row">
+      <div class="col-auto">
+        <button
+          type="submit"
+          class="btn btn-primary btn-block">
+          Connect
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

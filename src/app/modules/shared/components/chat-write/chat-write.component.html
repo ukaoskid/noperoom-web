@@ -1,0 +1,21 @@
+<div class="container">
+  <form novalidate [formGroup]="form" (ngSubmit)="submit()">
+    <div class="row">
+      <div class="col-10">
+        <app-text-input
+          #inputMessage
+          formControlName="message"
+          placeholder="Message"
+          [showValidation]="false">
+        </app-text-input>
+      </div>
+      <div class="col-2">
+        <button
+          type="submit"
+          class="btn btn-primary btn-block">
+          Send
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
