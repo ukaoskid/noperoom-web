@@ -3,6 +3,7 @@ import {ChatMessageRouterService} from "../../../../services/chat-message-router
 import {Chat} from '../../models/chat.interface';
 import {environment} from "../../../../../environments/environment";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-chat-write',
@@ -10,6 +11,8 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
   styleUrls: ['./chat-write.component.sass']
 })
 export class ChatWriteComponent implements OnInit {
+
+  faPaperPlane = faPaperPlane;
 
   form: FormGroup = this.formBuilder.group({
     message: ['', Validators.required]
@@ -26,6 +29,11 @@ export class ChatWriteComponent implements OnInit {
   }
 
   sendMessage(message: string) {
+    if (!message || message.trim().length <= 0) {
+      this.form.reset();
+      return;
+    }
+
     const data: Chat = {
       n: environment.connInfo.nickname,
       t: Date.now(),

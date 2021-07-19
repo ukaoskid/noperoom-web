@@ -1,7 +1,7 @@
 <div class="container">
   <form novalidate [formGroup]="form" (ngSubmit)="submit()">
     <div class="row">
-      <div class="col-10">
+      <div class="col-11">
         <app-text-input
           #inputMessage
           formControlName="message"
@@ -9,11 +9,11 @@
           [showValidation]="false">
         </app-text-input>
       </div>
-      <div class="col-2">
+      <div class="col-1">
         <button
           type="submit"
           class="btn btn-primary btn-block">
-          Send
+          <fa-icon [icon]="faPaperPlane"></fa-icon>
         </button>
       </div>
     </div>

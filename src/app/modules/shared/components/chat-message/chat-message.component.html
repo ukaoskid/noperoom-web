@@ -1,4 +1,4 @@
-<div class="message" [ngClass]="message.own ? 'own-message' : ''">
+<div class="message mb-2" [ngClass]="message.own ? 'own-message' : ''">
   <span class="user mr-1">{{ message.n }}</span><span class="date">{{ message.t | momentify }}</span><br/>
   <span>{{ message.m }}</span>
 </div>

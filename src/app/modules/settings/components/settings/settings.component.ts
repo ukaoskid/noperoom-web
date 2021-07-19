@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from "@angular/router";
 import {environment} from "../../../../../environments/environment";
+import { v4 } from 'uuid';
+import { faMagic, faPlug } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-settings',
@@ -9,12 +11,16 @@ import {environment} from "../../../../../environments/environment";
   styleUrls: ['./settings.component.sass']
 })
 export class SettingsComponent implements OnInit {
+  faMagic = faMagic
+  faPlug = faPlug
 
   form: FormGroup = this.formBuilder.group({
-    server: ['', Validators.required],
     nickname: ['', Validators.required],
     channel: ['', Validators.required]
   });
+
+  @ViewChild('channelName')
+  channelName: ElementRef;
 
   constructor(private formBuilder: FormBuilder,
               private router: Router) { }
@@ -23,13 +29,12 @@ export class SettingsComponent implements OnInit {
   }
 
   submit() {
-    const payload = {
-      server: this.form.value.server,
-      nickname: this.form.value.nickname,
-      channel: this.form.value.channel
-    };
-
-    environment.connInfo = payload;
+    environment.connInfo.nickname = this.form.value.nickname;
+    environment.connInfo.channel = this.form.value.channel
     this.router.navigate(['/chat'])
+  }
+
+  generateChannelName() {
+    this.form.controls['channel'].setValue(v4());
   }
 }

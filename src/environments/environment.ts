@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   connInfo: {
-    server: '',
+    server: 'http://localhost:3000',
     nickname: '',
     channel: ''
   }
