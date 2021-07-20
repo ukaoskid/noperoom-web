@@ -1,8 +1,12 @@
-<h2>Settings</h2>
 <div class="container">
+  <div class="row pb-3">
+    <div class="col-sm-12">
+      <span class="section-title">Noperoom</span>
+    </div>
+  </div>
   <form novalidate [formGroup]="form" (ngSubmit)="submit()">
     <div class="row">
-      <div class="col-12">
+      <div class="col-sm-12">
         <app-text-input
           formControlName="nickname"
           placeholder="Nickname"
@@ -11,7 +15,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-8">
+      <div class="col-sm-8">
         <app-text-input
           #channelName
           formControlName="channel"
@@ -19,7 +23,7 @@
           [showValidation]="false">
         </app-text-input>
       </div>
-      <div class="col-2">
+      <div class="col-sm-2 mb-2">
         <button
           (click)="generateChannelName()"
           type="button"
@@ -27,7 +31,7 @@
           <fa-icon [icon]="faMagic"></fa-icon>
         </button>
       </div>
-      <div class="col-2">
+      <div class="col-sm-2 mb-2">
         <button
           [cdkCopyToClipboard]="channelName.value"
           type="button"
@@ -37,7 +41,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-12">
+      <div class="col-sm-12">
         <button
           type="submit"
           class="btn btn-primary btn-block">

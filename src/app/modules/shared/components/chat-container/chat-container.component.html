@@ -1,6 +1,14 @@
-<h2>Channel {{ channel }}</h2>
-<div *ngIf="messages.length > 0">
-    <div *ngFor="let message of messages">
-        <app-chat-message [message]="message"></app-chat-message>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+        <span class="section-title">{{ channel }}</span>
     </div>
+  </div>
+</div>
+<div *ngIf="messages.length > 0">
+  <div class="container">
+    <div *ngFor="let message of messages">
+      <app-chat-message [message]="message"></app-chat-message>
+    </div>
+  </div>
 </div>

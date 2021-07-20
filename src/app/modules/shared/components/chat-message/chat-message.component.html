@@ -1,4 +1,8 @@
-<div class="message mb-2" [ngClass]="message.own ? 'own-message' : ''">
-  <span class="user mr-1">{{ message.n }}</span><span class="date">{{ message.t | momentify }}</span><br/>
-  <span>{{ message.m }}</span>
+<div class="row">
+  <div class="col-sm-auto" [ngClass]="message.own ? 'offset-sm-10' : ''">
+    <div class="message m-1 pr-1 pl-1" [ngClass]="message.own ? 'own-message' : ''">
+      <span class="user mr-1">{{ message.n }}</span><span class="date">{{ message.t | momentify }}</span><br/>
+      <span>{{ message.m }}</span>
+    </div>
+  </div>
 </div>
