@@ -15,6 +15,7 @@ import {LoadingComponent} from "./components/loading/loading.component";
 import {CardComponent} from "./components/card/card.component";
 import { TranslateModule } from '@ngx-translate/core';
 import {MomentifyPipe} from "./pipes/momentify/momentify.pipe";
+import {ClipboardModule} from "@angular/cdk/clipboard";
 
 const NG_BOOTSTRAP_MODULES = [
   NgbButtonsModule
@@ -26,7 +27,8 @@ const FRAMEWORK_MODULES = [
   FontAwesomeModule,
   FormsModule,
   ReactiveFormsModule,
-  TranslateModule
+  TranslateModule,
+  ClipboardModule
 ];
 
 const SHARED_COMPONENTS = [

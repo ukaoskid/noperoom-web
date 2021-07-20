@@ -30,7 +30,7 @@ export class ChatWriteComponent implements OnInit {
 
   sendMessage(message: string) {
     if (!message || message.trim().length <= 0) {
-      this.form.reset();
+      this.form.controls['message'].setValue('');
       return;
     }
 

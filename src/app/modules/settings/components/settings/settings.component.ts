@@ -3,7 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from "@angular/router";
 import {environment} from "../../../../../environments/environment";
 import { v4 } from 'uuid';
-import { faMagic, faPlug } from '@fortawesome/free-solid-svg-icons'
+import { faMagic, faPlug, faClipboard } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-settings',
@@ -13,6 +13,7 @@ import { faMagic, faPlug } from '@fortawesome/free-solid-svg-icons'
 export class SettingsComponent implements OnInit {
   faMagic = faMagic
   faPlug = faPlug
+  faClipboard = faClipboard
 
   form: FormGroup = this.formBuilder.group({
     nickname: ['', Validators.required],

@@ -19,12 +19,20 @@
           [showValidation]="false">
         </app-text-input>
       </div>
-      <div class="col-4">
+      <div class="col-2">
         <button
           (click)="generateChannelName()"
           type="button"
           class="btn btn-primary btn-block">
           <fa-icon [icon]="faMagic"></fa-icon>
+        </button>
+      </div>
+      <div class="col-2">
+        <button
+          [cdkCopyToClipboard]="channelName.value"
+          type="button"
+          class="btn btn-primary btn-block">
+          <fa-icon [icon]="faClipboard"></fa-icon>
         </button>
       </div>
     </div>
